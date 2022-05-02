@@ -1,6 +1,6 @@
 import './style.css';
 
-
+const listContainer = document.querySelector('#list-container')
 
 let toDoObjects = [{
   content: "wash the dishes",
@@ -9,11 +9,11 @@ let toDoObjects = [{
 }, {
   content: "complete To Do list project",
   complete: false,
-  index: 1
+  index: 2
 }, ]
 
-toDoObjects.forEach((task)=>{
-
+toDoObjects.forEach((task) => {
+  listContainer.innerHTML += `<li><input type="checkbox"><p>${task.content}</p> </li>`
 })
 
 console.log(toDoObjects);
