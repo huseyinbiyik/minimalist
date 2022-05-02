@@ -1,1 +1,8 @@
-node_modules
+#Ignore node modules
+/node_modules
+
+#Ignore macOs default files
+.DS_Store
+
+#Ignore vscode default files
+.vscode
