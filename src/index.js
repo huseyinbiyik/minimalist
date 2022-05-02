@@ -1,14 +1,19 @@
-import _ from 'lodash';
 import './style.css';
 
-function component() {
-  const element = document.createElement('div');
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
 
-  return element;
-}
+let toDoObjects = [{
+  content: "wash the dishes",
+  complete: false,
+  index: 1
+}, {
+  content: "complete To Do list project",
+  complete: false,
+  index: 1
+}, ]
 
-document.body.appendChild(component());
+toDoObjects.forEach((task)=>{
+
+})
+
+console.log(toDoObjects);
