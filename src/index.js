@@ -13,9 +13,12 @@ let toDoObjects = [{
 }, ]
 
 toDoObjects.forEach((task) => {
-  listContainer.innerHTML += `<li><input type="checkbox"><p>${task.content}</p><span class="material-symbols-outlined">
+  listContainer.innerHTML += `
+  <li class="to-do-item">
+  <input class="to-do-input" type="checkbox">
+  <p>${task.content}</p>
+  <span class="material-symbols-outlined">
   more_vert
-  </span> </li>`
+  </span>
+   </li>`
 })
-
-console.log(toDoObjects);
