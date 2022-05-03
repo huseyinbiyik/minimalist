@@ -1,16 +1,16 @@
 import './style.css';
 
-const listContainer = document.querySelector('#list-container')
+const listContainer = document.querySelector('#list-container');
 
-let toDoObjects = [{
-  content: "wash the dishes",
+const toDoObjects = [{
+  content: 'wash the dishes',
   complete: false,
-  index: 1
+  index: 1,
 }, {
-  content: "complete To Do list project",
+  content: 'complete To Do list project',
   complete: false,
-  index: 2
-}, ]
+  index: 2,
+}];
 
 toDoObjects.forEach((task) => {
   listContainer.innerHTML += `
@@ -20,5 +20,5 @@ toDoObjects.forEach((task) => {
   <span class="material-symbols-outlined">
   more_vert
   </span>
-   </li>`
-})
+   </li>`;
+});
