@@ -2,7 +2,7 @@
 
 # to-do-list
 
-> to-do-list is a minimal to do list app!
+> to-do-list is a minimal to do list app works on browser!
 
 ## Built With
 
@@ -19,8 +19,8 @@ To get a local copy up and running follow these simple example steps.
 2- Get the directory that you want to clone the repository. <br>
 3- Open the command prompt in this directory. <br>
 4- Write `git clone git@github.com:huseyinbiyik/to-do-list.git` <br>
-5- Go to the repository folder in your command prompt cd world-tomato-forum-1st-capstone. <br>
-6- Run npm install to install the dev dependencies for linters and node sass.
+5- Go to the repository folder in your command prompt `cd to-do-list`. <br>
+6- Run npm install to install the dev dependencies for linters.
 
 ### Prerequisites
 
