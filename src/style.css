@@ -113,17 +113,20 @@ ul {
   background-color: #f6f6f6;
 }
 
-#remove-section a {
+#remove-section #clear-button {
   text-decoration: none;
   font-size: 15px;
   font-weight: 300;
   opacity: 0.5;
   color: black;
+  background: transparent;
+  border: none;
 }
 
-#remove-section a:hover {
+#remove-section #clear-button:hover {
   text-decoration: underline;
   opacity: 1;
+  cursor: grab;
 }
 
 input[type=checkbox]:checked + label.strikethrough{

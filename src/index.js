@@ -14,31 +14,23 @@ function display() {
   let status = "";
   listContainer.innerHTML = ``;
   restoredData.forEach((element) => {
-    if(element.complete===true){
+    if (element.complete === true) {
       status = "checked";
     } else {
       status = "";
     }
     listContainer.innerHTML += `
     <li class="to-do-item">
-    <input id="${element.indexNumber}" class="to-do-input" type="checkbox" ${status}>
+    <input id="${element.indexNumber}" class="to-do-input"  type="checkbox" ${status}>
     <label class="strikethrough"><p contenteditable="true">${element.content}</p></label>
     <span class="material-symbols-outlined">
     more_vert
     </span>
     </li>`;
   });
+  inputChecker();
 }
 display();
-
-addNewForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let itemsArray = JSON.parse(localStorage.getItem("todolist"));
-  itemsArray.push(new addItem(addTaskInput.value));
-  localStorage.setItem("todolist", JSON.stringify(itemsArray));
-  indexSetter();
-  display();
-});
 
 function indexSetter() {
   let restoredData = JSON.parse(localStorage.getItem("todolist"));
@@ -50,18 +42,50 @@ function indexSetter() {
   localStorage.setItem("todolist", JSON.stringify(restoredData));
 }
 
-const toDoInputBox = document.querySelectorAll(".to-do-input");
-toDoInputBox.forEach((element) => {
-  element.addEventListener("click", (e) => {
-    let restoredData = JSON.parse(localStorage.getItem("todolist"));
-    let targetEl = e.target;
-    let targetId = targetEl.id;
-    if (targetEl.checked === true) {
-      restoredData[targetId].complete = true;
-    } else {
-      restoredData[targetId].complete = false;
-    }
+addNewForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let itemsArray = JSON.parse(localStorage.getItem("todolist"));
+  itemsArray.push(new addItem(addTaskInput.value));
+  localStorage.setItem("todolist", JSON.stringify(itemsArray));
+  indexSetter();
+  display();
+  formReset();
+});
 
-    localStorage.setItem("todolist", JSON.stringify(restoredData));
+function inputChecker() {
+  let toDoInputBox = document.querySelectorAll(".to-do-input");
+  console.log(toDoInputBox);
+  toDoInputBox.forEach((element) => {
+    element.addEventListener("click", (e) => {
+      let restoredData = JSON.parse(localStorage.getItem("todolist"));
+      let targetEl = e.target;
+      let targetId = targetEl.id;
+      if (targetEl.checked === true) {
+        restoredData[targetId].complete = true;
+      } else {
+        restoredData[targetId].complete = false;
+      }
+      localStorage.setItem("todolist", JSON.stringify(restoredData));
+    });
   });
+}
+
+function formReset() {
+  addNewForm.reset();
+}
+
+const clearButton = document.querySelector("#clear-button");
+clearButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  let restoredData = JSON.parse(localStorage.getItem("todolist"));
+  restoredData = restoredData.filter((element) => {
+    if (element.complete === false) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  localStorage.setItem("todolist", JSON.stringify(restoredData));
+  indexSetter();
+  display();
 });
