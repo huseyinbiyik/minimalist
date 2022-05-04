@@ -1,12 +1,12 @@
-import './style.css';
 
-const listContainer = document.querySelector('#list-container');
+import "./style.css";
+import { addItem } from "./modules/addItem.js";
 
-const toDoObjects = [{
-  content: '',
-  complete: false,
-  index: 1,
-},];
+
+const listContainer = document.querySelector("#list-container");
+
+export const toDoObjects = [];
+
 
 toDoObjects.forEach((task) => {
   listContainer.innerHTML += `
@@ -16,5 +16,16 @@ toDoObjects.forEach((task) => {
   <span class="material-symbols-outlined">
   more_vert
   </span>
-   </li>`;
+  </li>`;
 });
+
+const addNewForm = document.querySelector("#add-list-form");
+const addTaskInput = document.querySelector("#add-task");
+
+
+  addNewForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    toDoObjects.push(new addItem(addTaskInput.value));
+  });
+
+
