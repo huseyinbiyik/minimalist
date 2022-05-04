@@ -125,3 +125,7 @@ ul {
   text-decoration: underline;
   opacity: 1;
 }
+
+input[type=checkbox]:checked + label.strikethrough{
+  text-decoration: line-through;
+}

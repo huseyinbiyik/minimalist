@@ -11,12 +11,18 @@ if (!JSON.parse(localStorage.getItem("todolist"))) {
 
 function display() {
   let restoredData = JSON.parse(localStorage.getItem("todolist"));
+  let status = "";
   listContainer.innerHTML = ``;
   restoredData.forEach((element) => {
+    if(element.complete===true){
+      status = "checked";
+    } else {
+      status = "";
+    }
     listContainer.innerHTML += `
     <li class="to-do-item">
-    <input class="to-do-input" type="checkbox">
-    <p>${element.content}</p>
+    <input id="${element.indexNumber}" class="to-do-input" type="checkbox" ${status}>
+    <label class="strikethrough"><p contenteditable="true">${element.content}</p></label>
     <span class="material-symbols-outlined">
     more_vert
     </span>
@@ -44,6 +50,18 @@ function indexSetter() {
   localStorage.setItem("todolist", JSON.stringify(restoredData));
 }
 
-
 const toDoInputBox = document.querySelectorAll(".to-do-input");
-console.log(toDoInputBox);
+toDoInputBox.forEach((element) => {
+  element.addEventListener("click", (e) => {
+    let restoredData = JSON.parse(localStorage.getItem("todolist"));
+    let targetEl = e.target;
+    let targetId = targetEl.id;
+    if (targetEl.checked === true) {
+      restoredData[targetId].complete = true;
+    } else {
+      restoredData[targetId].complete = false;
+    }
+
+    localStorage.setItem("todolist", JSON.stringify(restoredData));
+  });
+});
