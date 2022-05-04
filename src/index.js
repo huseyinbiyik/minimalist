@@ -3,14 +3,10 @@ import './style.css';
 const listContainer = document.querySelector('#list-container');
 
 const toDoObjects = [{
-  content: 'wash the dishes',
+  content: '',
   complete: false,
   index: 1,
-}, {
-  content: 'complete To Do list project',
-  complete: false,
-  index: 2,
-}];
+},];
 
 toDoObjects.forEach((task) => {
   listContainer.innerHTML += `
