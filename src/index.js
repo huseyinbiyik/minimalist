@@ -22,13 +22,14 @@ function display() {
     listContainer.innerHTML += `
     <li class="to-do-item">
     <input id="${element.indexNumber}" class="to-do-input"  type="checkbox" ${status}>
-    <label class="strikethrough"><p contenteditable="true">${element.content}</p></label>
+    <input class="strikethrough editable-input" data-index="${element.indexNumber}" type="text" value="${element.content}">
     <span class="material-symbols-outlined">
     more_vert
     </span>
     </li>`;
   });
   inputChecker();
+  edit();
 }
 display();
 
@@ -54,7 +55,6 @@ addNewForm.addEventListener("submit", (e) => {
 
 function inputChecker() {
   let toDoInputBox = document.querySelectorAll(".to-do-input");
-  console.log(toDoInputBox);
   toDoInputBox.forEach((element) => {
     element.addEventListener("click", (e) => {
       let restoredData = JSON.parse(localStorage.getItem("todolist"));
@@ -89,3 +89,20 @@ clearButton.addEventListener("click", (e) => {
   indexSetter();
   display();
 });
+
+//edit
+function edit() {
+  let editForm = document.querySelectorAll(".editable-input");
+
+  editForm.forEach((e) => {
+    let restoredData = JSON.parse(localStorage.getItem("todolist"));
+    e.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        e.target.blur();
+        restoredData[e.target.getAttribute("data-index")].content =
+          e.target.value;
+      }
+      localStorage.setItem("todolist", JSON.stringify(restoredData));
+    });
+  });
+}

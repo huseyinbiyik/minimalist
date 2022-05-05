@@ -1,6 +1,7 @@
 body {
   background-color: #f6f6f6;
-  font-family: 'Open Sans', 'Lucida Grande', 'tahoma', 'verdana', 'arial', sans-serif;
+  font-family: "Open Sans", "Lucida Grande", "tahoma", "verdana", "arial",
+    sans-serif;
   box-sizing: border-box;
 }
 
@@ -129,6 +130,8 @@ ul {
   cursor: grab;
 }
 
-input[type=checkbox]:checked + label.strikethrough{
+input[type="checkbox"]:checked + input.strikethrough {
   text-decoration: line-through;
 }
+
+
