@@ -1,6 +1,11 @@
 body {
   background-color: #f6f6f6;
-  font-family: "Open Sans", "Lucida Grande", "tahoma", "verdana", "arial",
+  font-family:
+    "Open Sans",
+    "Lucida Grande",
+    "tahoma",
+    "verdana",
+    "arial",
     sans-serif;
   box-sizing: border-box;
 }
@@ -102,8 +107,8 @@ ul {
   font-size: 15px;
 }
 
-.editable-input:focus{
-  border: none;
+.to-do-item .editable-input:focus-visible {
+  outline: none;
 }
 
 .to-do-item span {
@@ -139,5 +144,3 @@ ul {
 input[type="checkbox"]:checked + input.strikethrough {
   text-decoration: line-through;
 }
-
-

@@ -1,36 +1,22 @@
-import "./style.css";
-import { addItem } from "./modules/addItem.js";
-import display from "./modules/display.js";
-import indexSetter from "./modules/indexSetter";
-import clearAll from "./modules/clearAll";
+import './style.css';
+import display from './modules/display.js';
 
-export const listContainer = document.querySelector("#list-container");
-const addNewForm = document.querySelector("#add-list-form");
-const addTaskInput = document.querySelector("#add-task");
-const clearButton = document.querySelector("#clear-button");
+import clearAll from './modules/clearAll.js';
+import submitForm from './modules/submitForm.js';
 
+const addNewForm = document.querySelector('#add-list-form');
+const clearButton = document.querySelector('#clear-button');
 
-if (!JSON.parse(localStorage.getItem("todolist"))) {
-  localStorage.setItem("todolist", JSON.stringify([]));
+if (!JSON.parse(localStorage.getItem('todolist'))) {
+  localStorage.setItem('todolist', JSON.stringify([]));
 }
-
+// display
 display();
 
+// add new to do
+addNewForm.addEventListener('submit', submitForm);
 
+// form reset
 
-addNewForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let itemsArray = JSON.parse(localStorage.getItem("todolist"));
-  itemsArray.push(new addItem(addTaskInput.value));
-  localStorage.setItem("todolist", JSON.stringify(itemsArray));
-  indexSetter();
-  display();
-  formReset();
-});
-
-function formReset() {
-  addNewForm.reset();
-}
-
-clearButton.addEventListener("click", clearAll) ;
-
+// clear all completed
+clearButton.addEventListener('click', clearAll);

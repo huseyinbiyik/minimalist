@@ -1,16 +1,16 @@
-import indexSetter from "./indexSetter";
-import display from "./display";
+import indexSetter from './indexSetter.js';
+import display from './display.js';
+
 export default function clearAll(e) {
   e.preventDefault();
-  let restoredData = JSON.parse(localStorage.getItem("todolist"));
+  let restoredData = JSON.parse(localStorage.getItem('todolist'));
   restoredData = restoredData.filter((element) => {
     if (element.complete === false) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   });
-  localStorage.setItem("todolist", JSON.stringify(restoredData));
+  localStorage.setItem('todolist', JSON.stringify(restoredData));
   indexSetter();
   display();
 }

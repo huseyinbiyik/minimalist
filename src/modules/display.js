@@ -1,15 +1,17 @@
-import { listContainer } from "..";
-import inputChecker from "./inputChecker";
-import edit from "./edit";
+import inputChecker from './inputChecker.js';
+import edit from './edit.js';
+
+const listContainer = document.querySelector('#list-container');
+
 export default function display() {
-  let restoredData = JSON.parse(localStorage.getItem("todolist"));
-  let status = "";
-  listContainer.innerHTML = ``;
+  const restoredData = JSON.parse(localStorage.getItem('todolist'));
+  let status = '';
+  listContainer.innerHTML = '';
   restoredData.forEach((element) => {
     if (element.complete === true) {
-      status = "checked";
+      status = 'checked';
     } else {
-      status = "";
+      status = '';
     }
     listContainer.innerHTML += `
     <li class="to-do-item">
