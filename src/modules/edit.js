@@ -3,10 +3,13 @@ export default function edit() {
 
   editForm.forEach((e) => {
     const restoredData = JSON.parse(localStorage.getItem('todolist'));
+    e.addEventListener('click', (e)=>{
+      console.log(e.target);
+    })
     e.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
         e.target.blur();
-        restoredData[e.target.getAttribute('data-index')].content = e.target.value;
+        restoredData[e.target.getAttribute('data-index')-1].content = e.target.value;
       }
       localStorage.setItem('todolist', JSON.stringify(restoredData));
     });

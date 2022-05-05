@@ -2,6 +2,6 @@ export default class AddItem {
   constructor(input) {
     this.content = input;
     this.complete = false;
-    this.indexNumber = 0;
+    this.indexNumber = 1;
   }
 }

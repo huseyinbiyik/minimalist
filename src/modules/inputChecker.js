@@ -6,9 +6,9 @@ export default function inputChecker() {
       const targetEl = e.target;
       const targetId = targetEl.id;
       if (targetEl.checked === true) {
-        restoredData[targetId].complete = true;
+        restoredData[targetId-1].complete = true;
       } else {
-        restoredData[targetId].complete = false;
+        restoredData[targetId-1].complete = false;
       }
       localStorage.setItem('todolist', JSON.stringify(restoredData));
     });
