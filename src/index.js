@@ -1,24 +1,22 @@
-import "./style.css";
-import display from "./modules/display.js";
+import './style.css';
+import display from './modules/display.js';
 
-import clearAll from "./modules/clearAll.js";
-import submitForm from "./modules/submitForm.js";
+import clearAll from './modules/clearAll.js';
+import submitForm from './modules/submitForm.js';
 
-const addNewForm = document.querySelector("#add-list-form");
-const clearButton = document.querySelector("#clear-button");
+const addNewForm = document.querySelector('#add-list-form');
+const clearButton = document.querySelector('#clear-button');
 
-if (!JSON.parse(localStorage.getItem("todolist"))) {
-  localStorage.setItem("todolist", JSON.stringify([]));
+if (!JSON.parse(localStorage.getItem('todolist'))) {
+  localStorage.setItem('todolist', JSON.stringify([]));
 }
 // display
 display();
 
 // add new to do
-addNewForm.addEventListener("submit", submitForm);
+addNewForm.addEventListener('submit', submitForm);
 
 // form reset
 
 // clear all completed
-clearButton.addEventListener("click", clearAll);
-
-
+clearButton.addEventListener('click', clearAll);
