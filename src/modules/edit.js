@@ -1,4 +1,5 @@
 import display from "./display.js";
+import indexSetter from "./indexSetter.js";
 
 export default function edit() {
   const editForm = document.querySelectorAll(".editable-input");
@@ -33,6 +34,7 @@ export default function edit() {
       restoredData.splice(targetInd, 1);
       localStorage.setItem("todolist", JSON.stringify(restoredData));
       display();
+      indexSetter();
     });
   });
 }

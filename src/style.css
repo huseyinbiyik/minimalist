@@ -115,6 +115,11 @@ ul {
 .to-do-item span {
   width: 24px;
   color: gray;
+  cursor: pointer;
+}
+
+.to-do-item span:hover{
+  color: black;
 }
 
 #remove-section {
