@@ -1,24 +1,22 @@
 import './style.css';
+import display from './modules/display.js';
 
-const listContainer = document.querySelector('#list-container');
+import clearAll from './modules/clearAll.js';
+import submitForm from './modules/submitForm.js';
 
-const toDoObjects = [{
-  content: 'wash the dishes',
-  complete: false,
-  index: 1,
-}, {
-  content: 'complete To Do list project',
-  complete: false,
-  index: 2,
-}];
+const addNewForm = document.querySelector('#add-list-form');
+const clearButton = document.querySelector('#clear-button');
 
-toDoObjects.forEach((task) => {
-  listContainer.innerHTML += `
-  <li class="to-do-item">
-  <input class="to-do-input" type="checkbox">
-  <p>${task.content}</p>
-  <span class="material-symbols-outlined">
-  more_vert
-  </span>
-   </li>`;
-});
+if (!JSON.parse(localStorage.getItem('todolist'))) {
+  localStorage.setItem('todolist', JSON.stringify([]));
+}
+// display
+display();
+
+// add new to do
+addNewForm.addEventListener('submit', submitForm);
+
+// form reset
+
+// clear all completed
+clearButton.addEventListener('click', clearAll);
