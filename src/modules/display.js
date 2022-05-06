@@ -1,3 +1,4 @@
+/* eslint-disable  import/no-cycle */
 import inputChecker from './inputChecker.js';
 import edit from './edit.js';
 
