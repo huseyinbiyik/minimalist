@@ -17,6 +17,9 @@ export default function display() {
     <li class="to-do-item">
     <input id="${element.indexNumber}" class="to-do-input"  type="checkbox" ${status}>
     <input class="strikethrough editable-input" data-index="${element.indexNumber}" type="text" value="${element.content}">
+    <span class="material-symbols-outlined delete-icon" data-index="${element.indexNumber}">
+    delete_forever
+    </span>
     <span class="material-symbols-outlined">
     more_vert
     </span>
