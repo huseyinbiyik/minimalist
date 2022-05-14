@@ -36,7 +36,7 @@ You can navigate through the navigation bar to see the different pages.
 
 ### Deployment
 
-You can check on the  [Live Link](https://huseyinbiyik.github.io/to-do-list/dist/)
+You can check on the  [Live Link](https://huseyinbiyik.github.io/to-do-list)
 
 ## Authors
 
