@@ -20,7 +20,8 @@ To get a local copy up and running follow these simple example steps.
 3- Open the command prompt in this directory. <br>
 4- Write `git clone git@github.com:huseyinbiyik/to-do-list.git` <br>
 5- Go to the repository folder in your command prompt `cd to-do-list`. <br>
-6- Run npm install to install the dev dependencies for linters.
+6- Run `npm install` to install the dev dependencies for linters. <br>
+7- Run `npm start` to show the web app on the browser.
 
 ### Prerequisites
 
