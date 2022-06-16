@@ -1,8 +1,6 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Minimalist
 
-# to-do-list
-
-> to-do-list is a minimal to do list app works on browser!
+> Minimalist is a minimal to do list app works on browser!
 
 ## Built With
 
@@ -10,6 +8,9 @@
 - CSS3
 - JavaScript
 - Webpack
+
+## Live Demo
+[Live Demo](https://huseyinbiyik.github.io/to-do-list)
 
 ## Getting Started
 
@@ -34,10 +35,6 @@ No need to install. Open the index.html file with a browser.
 ### Usage
 
 You can navigate through the navigation bar to see the different pages.
-
-### Deployment
-
-You can check on the  [Live Link](https://huseyinbiyik.github.io/to-do-list)
 
 ## Authors
 
