@@ -10,7 +10,7 @@
 - Webpack
 
 ## Live Demo
-[Live Demo](https://huseyinbiyik.github.io/to-do-list)
+[Live Demo](https://huseyinbiyik.github.io/minimalist/)
 
 ## Getting Started
 
