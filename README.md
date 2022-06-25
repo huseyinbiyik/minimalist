@@ -1,6 +1,6 @@
 # Minimalist
 
-> Minimalist is a minimal to do list app works on browser!
+> A minimalistic to do list app. You can add, delete and edit your tasks. Built with plain JavaScript and local storage.
 
 ## Built With
 
