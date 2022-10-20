@@ -42,7 +42,7 @@ You can navigate through the navigation bar to see the different pages.
 
 - GitHub: [@huseyinbiyik](https://github.com/huseyinbiyik)
 - Twitter: [@huseyin__biyik](https://twitter.com/huseyin__biyik)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/huseyin-b%C4%B1y%C4%B1k/)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/tahahuseyinbiyik/)
 
 ## 🤝 Contributing
 
